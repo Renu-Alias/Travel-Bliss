@@ -1,4 +1,3 @@
-# Travel-Bliss
 # Demo Booking Website
 
 This project is a simple booking website that demonstrates how a frontend form interacts with a backend server and stores booking information in a MySQL database.
@@ -52,7 +51,7 @@ node server.js
 
 You should see:
 
-Server running on http://localhost:3000
+Server running on http://localhost:3000  
 Connected to MySQL Database
 
 ------------------------------------------------------------
@@ -90,13 +89,14 @@ PROJECT STRUCTURE
 
 project-folder
 │
-├── index.html
-├── style.css
-├── script.js
+├── frontend
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
 │
 └── backend
     ├── server.js
-    ├── package.json
+    └── package.json
 
 ------------------------------------------------------------
 
