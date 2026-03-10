@@ -1,4 +1,4 @@
-# Demo Booking Website
+# Travel Bliss
 
 This project is a simple booking website that demonstrates how a frontend form interacts with a backend server and stores booking information in a MySQL database.
 
