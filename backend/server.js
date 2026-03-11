@@ -9,11 +9,11 @@ app.use(express.json());
 
 
 const db = mysql.createConnection({
-  host: "mysql.railway.internal",
+  host: "metro.proxy.rlwy.net",
   user: "root",
   password: "IdZdbGrATmOTmgadzOfXypoYdpbvUWkE",
   database: "railway",
-  port: 3306
+  port: 51550
 });
 
 db.connect((err) => {
@@ -45,6 +45,7 @@ app.post("/book", (req, res) => {
 app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
+
 
 
 
