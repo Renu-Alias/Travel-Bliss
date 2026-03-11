@@ -1,13 +1,16 @@
 const express = require("express");
 const mysql = require("mysql2");
 const cors = require("cors");
+const path = require("path");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-// Database connection
+// Serve frontend files
+app.use(express.static(path.join(__dirname, "../frontend")));
+
 const db = mysql.createConnection({
   host: "metro.proxy.rlwy.net",
   user: "root",
@@ -24,12 +27,12 @@ db.connect((err) => {
   }
 });
 
-// Test route
+// Homepage
 app.get("/", (req, res) => {
-  res.send("Travel Bliss API is running");
+  res.sendFile(path.join(__dirname, "../frontend/index.html"));
 });
 
-// Booking route
+// Booking API
 app.post("/book", (req, res) => {
   const { name, email, phone_no, gender, travel_date, destination, add_notes } = req.body;
 
@@ -53,7 +56,6 @@ app.post("/book", (req, res) => {
   );
 });
 
-// Start server
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
